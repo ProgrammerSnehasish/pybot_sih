@@ -1,55 +1,93 @@
-#pybot_sih
-import cv2
-import pytesseract
-import difflib
-import os
-import csv
+📌 WhatsApp Chat Analyzer Bot
 
-# Set the path to the Tesseract executable
-pytesseract.pytesseract.tesseract_cmd = r'/usr/local/bin/tesseract'  # Update this path if necessary
+A Python-based bot that captures WhatsApp chats via screenshots, extracts text using Tesseract OCR, and detects unsafe words using a predefined word list.
 
-def extract_text_from_image(image_path):
-    try:
-        img = cv2.imread(image_path)
+📖 Features
 
-        # Check if the image was loaded successfully
-        if img is None:
-            raise FileNotFoundError(f"Image file '{image_path}' not found or cannot be opened.")
+Detects unsafe words in WhatsApp chats (app & web version)
 
-        gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+Takes automatic screenshots when WhatsApp is active
 
-        text = pytesseract.image_to_string(gray)
+Uses Tesseract OCR to extract text from images
 
-        return text
+Saves unsafe chats with highlighted words
 
-    except Exception as e:
-        print(f"Error extracting text from image: {e}")
-        return None
+Supports Windows, Linux, and macOS
 
-def compare_text_with_csv(extracted_text, csv_file_path):
-    try:
-        # Read the CSV file content as a single string
-        with open(csv_file_path, 'r') as file:
-            reader = csv.reader(file)
-            csv_content = '\n'.join([','.join(row) for row in reader])
+🛠 Installation
 
-        differences = difflib.unified_diff(csv_content.splitlines(), extracted_text.splitlines())
+1️⃣ Clone the Repository
 
-        # Display the differences
-        for line in differences:
-            print(line)
+git clone https://github.com/ProgrammerSnehasish/pybot_sih.git
+cd pybot_sih
 
-    except Exception as e:
-        print(f"Error comparing text with CSV file: {e}")
+2️⃣ Create a Virtual Environment
 
-# Example usage
-image_path = 'image_with_text.png'  # Replace with the path to your image
-csv_file_path = 'example.csv'       # Replace with the path to your CSV file
+# On Windows
+python -m venv bot_env
+bot_env\Scripts\activate
 
-# Extract text from the image
-extracted_text = extract_text_from_image(image_path)
-if extracted_text:
-    print("Extracted Text:", extracted_text)
+# On Linux/macOS
+python3 -m venv bot_env
+source bot_env/bin/activate
 
-    # Compare with the CSV file
-    compare_text_with_csv(extracted_text, csv_file_path)
+3️⃣ Install Dependencies
+
+pip install -r requirements.txt
+
+4️⃣ Install Tesseract OCR
+
+Windows:
+
+Copy the tesseract folder inside the repository.
+
+The script automatically sets the Tesseract path.
+
+Linux/macOS:
+
+sudo apt install tesseract-ocr  # Debian-based
+brew install tesseract  # macOS (Homebrew)
+
+🚀 Usage
+
+Run the Bot
+
+python pybot.whatsapp.py
+
+Modify the Unsafe Words List
+
+Edit the unsafe_words.txt file and add words to be detected, including terms related to drug trafficking.
+
+🏗 Project Structure
+
+📂 whatsapp-chat-analyzer
+├── 📁 tesseract            # Tesseract OCR (Windows)
+├── 📁 saved_screenshots    # Stores captured screenshots
+├── 📁 unsafe_chats_img     # Stores unsafe chats
+├── 📝 unsafe_words.txt     # List of words to detect (e.g., violence, threats, drug trafficking)
+├── 📜 pybot.whatsapp.py    # Main script
+├── 📝 requirements.txt     # Dependencies
+├── 📝 README.md            # Project documentation
+
+🛑 Troubleshooting
+
+Tesseract Not Found?
+
+Ensure tesseract.exe is in the tesseract folder.
+
+For Windows, manually set the path:
+
+pytesseract.pytesseract.tesseract_cmd = r"C:\path\to\tesseract.exe"
+
+Module Not Found?
+
+pip install -r requirements.txt
+
+📜 License
+
+This project is licensed under the MIT License.
+
+🤝 Contributing
+
+Pull requests are welcome! Open an issue for any feature requests or bug reports.
+

@@ -1,0 +1,9 @@
+ pyautogui
+ pytesseract
+ psutil
+ opencv-python
+ tesseract-ocr
+ pillow
+
+
+ #for Windows you have to install tesseract.exe form https://github.com/UB-Mannheim/tesseract/wiki 
