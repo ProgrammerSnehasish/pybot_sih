@@ -1,8 +1,8 @@
-# 📌 WhatsApp Chat Analyzer Bot
+# WhatsApp Chat Analyzer Bot
 
 A Python-based bot that captures WhatsApp chats via screenshots, extracts text using Tesseract OCR, and detects unsafe words using a predefined word list.
 
-# 📖 Features
+## Features
 
 Detects unsafe words in WhatsApp chats (app & web version)
 
