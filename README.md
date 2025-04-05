@@ -14,7 +14,7 @@ Saves unsafe chats with highlighted words
 
 Supports Windows, Linux, and macOS
 
-# 🛠 Installation
+## 🛠 Installation
 
 1️⃣ Clone the Repository
 
@@ -23,11 +23,11 @@ cd pybot_sih
 
 2️⃣ Create a Virtual Environment
 
-# On Windows
+### On Windows
 python -m venv bot_env
 bot_env\Scripts\activate
 
-# On Linux/macOS
+### On Linux/macOS
 python3 -m venv bot_env
 source bot_env/bin/activate
 
@@ -48,7 +48,7 @@ Linux/macOS:
 sudo apt install tesseract-ocr  # Debian-based
 brew install tesseract  # macOS (Homebrew)
 
-🚀 Usage
+## Usage
 
 Run the Bot
 
@@ -58,7 +58,7 @@ Modify the Unsafe Words List
 
 Edit the unsafe_words.txt file and add words to be detected, including terms related to drug trafficking.
 
-🏗 Project Structure
+## 🏗 Project Structure
 
 📂 whatsapp-chat-analyzer
 ├── 📁 tesseract            # Tesseract OCR (Windows)
@@ -69,7 +69,7 @@ Edit the unsafe_words.txt file and add words to be detected, including terms rel
 ├── 📝 requirements.txt     # Dependencies
 ├── 📝 README.md            # Project documentation
 
-🛑 Troubleshooting
+ ## 🛠 Troubleshooting
 
 Tesseract Not Found?
 
@@ -83,11 +83,11 @@ Module Not Found?
 
 pip install -r requirements.txt
 
-📜 License
+ ## License
 
 This project is licensed under the MIT License.
 
-🤝 Contributing
+## Contributing
 
 Pull requests are welcome! Open an issue for any feature requests or bug reports.
 
