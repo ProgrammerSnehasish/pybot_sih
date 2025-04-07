@@ -4,6 +4,8 @@
  opencv-python
  tesseract-ocr
  pillow
+ tkinter
 
-
+ #sudo apt install python3-tk python3-dev
+ #If the tesseract-ocr doesn't installed properly then try this -> sudo apt install -y tesseract-ocr libtesseract-dev libleptonica-dev
  #for Windows you have to install tesseract.exe form https://github.com/UB-Mannheim/tesseract/wiki 
